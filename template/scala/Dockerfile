@@ -13,9 +13,10 @@ RUN echo "Pulling watchdog binary from Github." \
     && chmod +x /usr/bin/fwatchdog \
     && cp /usr/bin/fwatchdog /home/app
 
-ADD src src/
-ADD project project/
-ADD build.sbt build.sbt
+# Function
+COPY function function/
+WORKDIR /root/function/
+
 RUN echo "Copied Sources" && ls
 
 RUN echo "Building with SBT"
