@@ -1,0 +1,2 @@
+language: scala
+fprocess: java -jar handler.jar
